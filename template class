@@ -1,0 +1,23 @@
+#include<bits/stdc++.h>
+using namespace std;
+template <class T>
+T add(T a, T b)
+{
+	return(a+b);
+}
+template <class T>
+T add(T a,T b,T c)
+{
+	return(a+b+c);
+}
+int main()
+{
+	cout<<add(12,23)<<endl;
+	cout<<add(12.23,45.56)<<endl;
+	cout<<add(12.34f,45.67f)<<endl;
+	
+	cout<<add(12,23,45)<<endl;
+	cout<<add(12.23,45.56,56.78)<<endl;
+	cout<<add(12.34f,45.67f,88.90f)<<endl;
+	
+}
