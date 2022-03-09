@@ -1,0 +1,59 @@
+#include<bits/stdc++.h>
+using namespace std;
+int add(int a,int b)
+{
+	return (a+b);
+}
+int sub(int a,int b)
+{
+	return (a-b);
+}
+int multi(int a,int b)
+{
+	return (a*b);
+}
+int division(int a,int b)
+{
+	return (a/b);
+}
+
+int add(int a,int b,int c)
+{
+	return (a+b+c);
+}
+int sub(int a,int b,int c)
+{
+	return (a-b-c);
+}
+int multi(int a,int b,int c)
+{
+	return (a*b*c);
+}
+int division(int a,int b,int c)
+{
+	return (a/b/c);
+}
+
+int main()
+{
+int (*fp)(int,int);
+fp=add;
+cout<<"the sum of 2 numbers are "<<(*fp)(12,12)<<endl;
+fp=sub;
+cout<<"the subtraction of 2 numbers are "<<(*fp)(12,12)<<endl;
+fp=multi;
+cout<<"the multiplication of 2 numbers are "<<(*fp)(12,12)<<endl;
+fp=division;
+cout<<"the division of 2 numbers are "<<(*fp)(12,12)<<endl;
+fp=add;
+int (*fpp)(int,int,int);
+fpp=add;
+cout<<"the sum of 3 numbers are "<<(*fpp)(12,12,12)<<endl;
+fpp=sub;
+cout<<"the subtraction of 3 numbers are "<<(*fpp)(12,12,12)<<endl;
+fpp=multi;
+cout<<"the multiplication of 3 numbers are "<<(*fpp)(12,12,12)<<endl;
+fpp=division;
+cout<<"the division of 3 numbers are "<<(*fpp)(12,12,12)<<endl;
+return 0;	
+}
