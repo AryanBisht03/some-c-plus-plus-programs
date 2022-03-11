@@ -1,0 +1,32 @@
+#include<bits/stdc++.h>
+using namespace std;
+class A
+{
+	private:
+	int a,b,c;
+	public:
+		void getval()
+		{
+			cout<<"enter the value of a"<<endl;
+			cin>>a;
+			cout<<"enter the value of b"<<endl;
+			cin>>b;
+			cout<<"enter the value of c"<<endl;
+			cin>>c;
+		}
+		int sum(int x,int y,int z)
+		{
+			x=a;
+			y=b;
+			z=c;
+			return (x+y+z);
+		}
+};
+int main()
+{
+	A *p;
+	p=new A();
+	p->getval();
+	cout<<"the sum of a,b,c is "<<p->sum(12,12,12);
+	return 0;
+}
