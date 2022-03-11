@@ -1,0 +1,23 @@
+#include<bits/stdc++.h>
+using namespace std;
+class A
+{
+	public:
+	int num;
+	void odd(int num)
+	{
+		if(num%2==0)
+		cout<<"even"<<endl;
+		else
+		cout<<"odd"<<endl;
+	}
+};
+int main()
+{
+	A *p;
+	p=new A();
+	cout<<"enter the number"<<endl;
+	cin>>p->num;
+	p->odd(p->num);
+	return 0;
+}
