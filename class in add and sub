@@ -1,0 +1,42 @@
+#include<bits/stdc++.h>
+using namespace std;
+class add
+{
+	public:
+		int a,b,c;
+		int ad(int a,int b,int c)
+		{
+			return(a+b+c);
+		}
+};
+class sub
+{
+	public:
+		int a,b,c;
+		int su(int a,int b,int c)
+		{
+			return(a-b-c);
+		}
+};
+int main()
+{
+	add r;
+	cout<<"enter a"<<endl;
+	cin>>r.a;
+	cout<<"enter b"<<endl;
+	cin>>r.b;
+	cout<<"enter c"<<endl;
+	cin>>r.c;
+	cout<<"the sum is "<<r.ad(r.a,r.b,r.c);
+	cout<<endl;
+    sub d;
+	cout<<"enter a"<<endl;
+	cin>>d.a;
+	cout<<"enter b"<<endl;
+	cin>>d.b;
+	cout<<"enter c"<<endl;
+	cin>>d.c;
+	cout<<"the sub is "<<d.su(r.a,r.b,r.c);
+		
+		return 0;
+}
