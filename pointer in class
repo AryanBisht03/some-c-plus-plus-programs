@@ -1,0 +1,50 @@
+#include<bits/stdc++.h>
+using namespace std;
+class A
+{
+	public:
+		int a;
+		int b;
+		int add(int a,int b)
+		{
+			return(a+b);
+		}
+		int sub(int a,int b)
+		{
+			return(a-b);
+		}
+		int multi(int a,int b)
+		{
+			return(a*b);
+		}
+		int divi(int a,int b)
+		{
+			return(a/b);
+		}
+};
+
+int main()
+{
+A d;
+cout<<"enter the value of a"<<endl;
+cin>>d.a;
+cout<<"enter the value of b"<<endl;
+cin>>d.b;
+cout<<"the sum of a and b is "<<d.add(d.a,d.b)<<endl;
+cout<<"the subtraction of a and b is "<<d.sub(d.a,d.b)<<endl;
+cout<<"the multiply of a and b is "<<d.multi(d.a,d.b)<<endl;
+cout<<"the division of a and b is "<<d.divi(d.a,d.b)<<endl;
+
+//pointers
+A *p;
+p=&d;
+cout<<"enter the value of a"<<endl;
+cin>>p->a;
+cout<<"enter the value of b"<<endl;
+cin>>p->b;
+cout<<"the sum of a and b is "<<p->add(p->a,p->b)<<endl;
+cout<<"the subtraction of a and b is "<<p->sub(p->a,p->b)<<endl;
+cout<<"the multiplication of a and b is "<<p->multi(p->a,p->b)<<endl;
+cout<<"the division of a and b is "<<p->divi(p->a,p->b)<<endl;
+return 0;
+}
