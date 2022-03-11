@@ -1,0 +1,28 @@
+#include<bits/stdc++.h>
+using namespace std;
+class rec
+{
+public:	
+int len;
+int bre;
+public:
+int area(int a,int b)
+{
+	return(a*b);
+	}	
+int peri(int a,int b)
+{
+	return (2*(a+b));
+}
+};
+int main()
+{
+cout<<"enter the length of a rectangle"<<endl;
+rec r1;
+cin>>r1.len;
+cout<<"enter the breadth of a rectangle"<<endl;
+cin>>r1.bre;
+cout<<"the area of rectangle is "<<r1.area(r1.len,r1.bre)<<endl;
+cout<<"the perimeter of rectangle is "<<r1.peri(r1.len,r1.bre)<<endl;
+
+}
