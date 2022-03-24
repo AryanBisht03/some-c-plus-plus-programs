@@ -1,0 +1,20 @@
+#include<bits/stdc++.h>
+using namespace std;
+template <class T>
+void swap(T a,T b)
+{
+	T temp=a;
+	a=b;
+	b=temp;
+	cout<<a<<endl;
+	cout<<b<<endl;
+}
+int main()
+{
+	swap(12,13);
+	swap('a','b');
+	swap(12.34f,56.78f);
+	swap(12.3454,56.6778);
+	
+	return 0;
+}
