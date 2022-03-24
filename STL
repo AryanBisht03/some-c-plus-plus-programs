@@ -1,0 +1,44 @@
+#include<bits/stdc++.h>
+using namespace std;
+template <class T>
+class A
+{
+	public:
+		T a,b,c;
+		void value(T a,T b,T c)
+		{
+			cout<<"the value of a is "<<a<<endl;
+			cout<<"the value of b is "<<b<<endl;
+			cout<<"the value of c is "<<c<<endl;
+		}
+};
+int main()
+{
+	A<int>r;
+	r.a=12;
+	r.b=13;
+	r.c=14;
+	r.value(r.a,r.b,r.c);
+	A<float>m;
+	m.a=12.34f;
+	m.b=23.34f;
+	m.c=67.89f;
+	m.value(m.a,m.b,m.c);
+	A<string>g;
+	g.a="hello aryan";
+	g.b="hello abbu";
+	g.c="hello shruti";
+	g.value(g.a,g.b,g.c);
+	A<char>x;
+	x.a='q';
+	x.b='e';
+	x.c='r';
+	x.value(x.a,x.b,x.c);
+	A<double>f;
+	f.a=12.3445;
+	f.b=56.6753;
+	f.c=66.6666;
+	f.value(f.a,f.b,f.c);
+	
+	return 0;
+}
