@@ -1,0 +1,22 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+	int num;
+	cout<<"enter the numeber"<<endl;
+	cin>>num;
+	int m;
+	int counter=0;
+	while(num!=0)
+	{
+		m=num%2;
+		if(m==1)
+		counter++;
+		num=num/2;
+	}
+	if(counter==1)
+	cout<<"number is 2 series";
+	else
+	cout<<"ordinary number";
+	return 0;
+}
