@@ -1,0 +1,27 @@
+#include<bits/stdc++.h>
+using namespace std;
+int great(stack<int>s,int value);
+int main()
+{
+stack<int> s;
+int num;
+cout<<"enter the number"<<endl;
+cin>>num;
+s.push(12);
+s.push(1);
+s.push(2);
+s.push(34);
+s.push(78);
+cout<<great(s,num);
+}
+int great(stack<int>s,int value)
+{
+	int counter=0;
+	while(!s.empty())
+	{
+		if(value<s.top())
+		counter++;
+		s.pop();
+	}
+	return counter;
+}
