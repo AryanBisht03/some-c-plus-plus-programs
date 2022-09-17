@@ -1,0 +1,685 @@
+#include<stdio.h>
+#include<math.h>
+#define pi 3.141
+struct rectangle
+{
+float l;
+float b;	
+};
+struct square 
+{
+	float l;
+};
+struct circle
+{
+	float r;
+};
+struct triangle 
+{
+	float base;
+	float height;
+	float a;
+	float b;
+	float c;
+};
+struct perimeter_of_circle 
+{
+	float a;
+	float b;
+	float c;
+};
+struct parell
+{
+	float base;
+	float height;
+	float side;
+};
+struct trap
+{
+	float base1;
+	float height;
+	float base2;
+	float side1;
+	float side2;
+};
+struct sector_of_circle
+{
+	float r;
+	float angle_in_radians;
+};
+
+struct elli
+{
+	float semi_major;
+	float semi_minor;
+};
+struct annulus
+{
+	float ir;
+	float Or;
+};
+struct polygon
+{
+	float side_length;
+	float number_of_sides;
+};
+struct rhombus
+{
+	float d1;
+	float d2;
+};
+struct kite
+{
+	float a;
+	float b;
+	float d1;
+	float d2;
+};
+struct cube
+{
+	float side;
+};
+struct cuboid
+{
+	float l;
+	float b;
+	float h;
+};
+struct sphere
+{
+	float r;
+};
+struct solid_hemis
+{
+	float r;
+};
+struct right_circular_cylinder
+{
+	float r;
+	float h;
+};
+struct right_circular_cone
+{
+	float r;
+	float h;
+	float l;
+};
+struct frustum
+{
+	float r1;
+	float r2;
+	float h;
+	float l;
+};
+void rectangle_area(void)
+{
+	struct rectangle r1;
+	printf("enter the value of length\n");
+	scanf("%f",&r1.l);
+	printf("enter the value of breath\n");
+	scanf("%f",&r1.b);
+	float area=r1.l*r1.b;
+	printf("The area of rectangle is %f\n",area);
+}
+void rectangle_Perimeter(void)
+{
+	struct rectangle r1;
+	printf("enter the value of length\n");
+	scanf("%f",&r1.l);
+	printf("enter the value of breath\n");
+	scanf("%f",&r1.b);
+	float peri=2*r1.l+2*r1.b;
+	printf("The perimeter of rectangle is %f\n",peri);
+}
+void square_area(void)
+{
+	struct square s1;
+	printf("Enter the length of the side\n");
+	scanf("%f",&s1.l);
+	float area=s1.l*s1.l;
+	printf("The area of square is %f\n",area);
+}
+void square_Perimeter(void)
+{
+	struct square s1;
+	printf("Enter the length of the side\n");
+	scanf("%f",&s1.l);
+	float peri=4*s1.l;
+	printf("The perimeter of square id %f\n",peri);
+}
+void circle_area(void)
+{
+	struct circle c1;
+	printf("Enter the radius of the circle\n");
+	scanf("%f",&c1.r);
+	float area=pi*c1.r*c1.r;
+	printf("The area of circle is %f\n",area);	
+}
+void circle_Perimeter(void)
+{
+	struct circle c1;
+	printf("Enter the radius of the circle\n");
+	scanf("%f",&c1.r);
+	float cir=2*pi*c1.r;
+	printf("The circumference of the circle is %f\n",cir);
+}
+void triangle_area(void)
+{
+struct triangle t;
+printf("Enter the base of the triangle\n");
+scanf("%f",&t.base);
+printf("Enter the height of the triangle\n");
+scanf("%f",&t.height);
+float area=1/2.0*t.base*t.height;
+printf("The area of triangle is %f\n",area);	
+}		
+void triangle_Perimeter(void)
+{
+	struct triangle t;
+	printf("Enter the value of a\n");
+	scanf("%f",&t.a);
+	printf("Enter the value of b\n");
+	scanf("%f",&t.b);
+	printf("Enter the value of c\n");
+	scanf("%f",&t.c);
+	float p=t.a+t.b+t.c;
+	printf("The perimeter of triangle is %f\n",p);
+}
+void trap_area(void)
+{
+	struct trap t;
+	printf("Enter the side 1 \n");
+	scanf("%f",&t.side1);
+	printf("Enter the side 2 \n");
+	scanf("%f",&t.side2);
+	printf("Enter the height\n");
+	scanf("%d",&t.height);
+	float area=1/2.0*(t.side1+t.side2)*t.height;
+	printf("The area of trapizium is %f\n",area);
+	}	
+void trap_Perimeter(void)
+{
+	struct trap t;
+	printf("Enter the side 1 \n");
+	scanf("%f",&t.side1);
+	printf("Enter the side 2 \n");
+	scanf("%f",&t.side2);
+	printf("Enter the base1\n");
+	scanf("%f",&t.base1);
+	printf("Enter the base2\n");
+	scanf("%f",&t.base2);
+	float peri=t.base1+t.base2+t.side1+t.side2;
+	printf("The perimeter of trapizium is %f\n",peri);
+}
+void elli_area(void)
+{
+	struct elli e;
+	printf("Enter the semimajor\n");
+	scanf("%f",&e.semi_major);
+	printf("Enter the semiminor\n");
+	scanf("%f",&e.semi_minor);
+	float area=pi*e.semi_major*e.semi_minor;
+	printf("The area of ellipse is %f\n",area);
+}
+void elli_Perimeter(void)
+{
+	struct elli e;
+	printf("Enter the semimajor\n");
+	scanf("%f",&e.semi_major);
+	printf("Enter the semiminor\n");
+	scanf("%f",&e.semi_minor);
+	float p=2*pi*sqrt((pow(e.semi_major,2)+pow(e.semi_minor,2))/2.0);
+	printf("The perimeter of ellipse is %f\n",p);
+}
+void annulus_area(void)
+{
+	struct annulus d;
+	printf("Enter outer radius\n");
+	scanf("%f",&d.Or);
+	printf("Enter inner radius\n");
+	scanf("%f",&d.ir);
+	float area=pi*(d.Or*d.Or-d.ir*d.ir);
+	printf("The area of annulus is %f\n",area);
+}
+void rhombus_area(void)
+{
+	struct rhombus r;
+	printf("Enter d1\n");
+	scanf("%f",&r.d1);
+	printf("Enter d2\n");
+	scanf("%f",&r.d2);
+	float area=1/2.0*r.d1*r.d2;
+	printf("The area of rhombus is %f\n",area);
+}		
+void rhombus_Perimeter(void)
+{
+	struct rhombus r;
+	printf("Enter the value of d1\n");
+	scanf("%f",&r.d1);
+	float p=4*r.d1;
+	printf("The perimeter of rhombus is %f\n",p);
+}
+void kite_area(void)
+{
+	struct kite k;
+	printf("Enter d1\n");
+	scanf("%f",&k.d1);
+	printf("Enter d2\n");
+	scanf("%f",&k.d2);
+	float area=(k.d1*k.d2)/2.0;
+	printf("The area of kite is %f\n",area);
+}
+void kite_Perimeter(void)
+{
+	struct kite k;
+	printf("Enter d1\n");
+	scanf("%f",&k.d1);
+	printf("Enter d2\n");
+	scanf("%f",&k.d2);
+	printf("Enter a\n");
+	scanf("%f",&k.a);
+	printf("Enter b\n");
+	scanf("%f",&k.b);
+	float p=k.a+k.b+k.d1+k.d2;
+	printf("The perimeter of kite is %f\n",p);
+}
+void cube_area(void)
+{
+	struct cube c1;
+	printf("Enter the side\n");
+	scanf("%f",&c1.side);
+	float area=4*c1.side*c1.side;
+	printf("The curved surface area of cube is %f\n",area);
+}
+void cube_Perimeter(void)
+{
+	struct cube c1;
+	printf("Enter the side\n");
+	scanf("%f",&c1.side);
+	float area=6*c1.side*c1.side;
+	printf("The total surface area of cube is %f\n",area);
+	
+}
+void cube_volume(void)
+{
+	struct cube c1;
+	printf("Enter the side\n");
+	scanf("%f",&c1.side);
+	float area=c1.side*c1.side*c1.side;
+	printf("The volume of cube is %f\n",area);
+	
+}
+void cuboid_area(void)
+{
+	struct cuboid cu1;
+	printf("Enter the value of L\n");
+	scanf("%f",&cu1.l);
+	printf("Enter the value of B\n");
+	scanf("%f",&cu1.b);
+	float area=2*cu1.h*(cu1.l+cu1.b);
+	printf("The curved surface area of cuboid is %f\n",area);
+}
+void cuboid_perimeter(void)
+{
+	struct cuboid cu1;
+	printf("Enter the value of L\n");
+	scanf("%f",&cu1.l);
+	printf("Enter the value of B\n");
+	scanf("%f",&cu1.b);
+	printf("Enter the value of H\n");
+	scanf("%f",&cu1.h);
+	float area=2*(cu1.l*cu1.b+cu1.b*cu1.h+cu1.h*cu1.l);
+	printf("The total surface area of cuboid is %f\n",area);
+}
+void cuboid_volume(void)
+{
+	struct cuboid cu1;
+	printf("Enter the value of L\n");
+	scanf("%f",&cu1.l);
+	printf("Enter the value of B\n");
+	scanf("%f",&cu1.b);
+	printf("Enter the value of H\n");
+	scanf("%f",&cu1.h);
+	float area=cu1.l*cu1.b*cu1.h;
+	printf("The Volume of cuboid is %f\n",area);
+}
+void sphere_area(void)
+{
+	struct sphere s;
+	printf("Enter the radius\n");
+	scanf("%f",&s.r);
+	float area=4*pi*s.r*s.r;
+	printf("The curved surface area of sphere is %f\n",area);
+	
+}
+void sphere_perimeter(void)
+{
+	struct sphere s;
+	printf("Enter the radius\n");
+	scanf("%f",&s.r);
+	float area=4*pi*s.r*s.r;
+	printf("The total surface area of sphere is %f\n",area);
+	
+}
+void sphere_volume(void)
+{
+	
+	struct sphere s;
+	printf("Enter the radius\n");
+	scanf("%f",&s.r);
+	float area=4.0/3.0*pi*s.r*s.r;
+	printf("The volume of sphere is %f\n",area);
+	
+}
+void right_circular_cylinder_area(void)
+{
+	struct right_circular_cylinder f;
+	printf("Enter the radius\n");
+	scanf("%f",&f.r);
+	printf("Enter the height\n");
+	scanf("%f",&f.h);
+	float area=2*pi*f.r*f.h;
+	printf("The curved surface area of right_circular_cylinder is %f\n",area);
+}
+void right_circular_cylinder_perimeter(void)
+{
+	struct right_circular_cylinder f;
+	printf("Enter the radius\n");
+	scanf("%f",&f.r);
+	printf("Enter the height\n");
+	scanf("%f",&f.h);
+	float area=2*pi*f.r*(f.r+f.h);
+	printf("The Total surface area of right_circular_cylinder is %f\n",area);
+}
+void right_circular_cylinder_volume(void)
+{
+	struct right_circular_cylinder f;
+	printf("Enter the radius\n");
+	scanf("%f",&f.r);
+	printf("Enter the height\n");
+	scanf("%f",&f.h);
+	float area=pi*f.r*f.r*f.h;
+	printf("The Volume of right_circular_cylinder is %f\n",area);
+}
+void right_circular_cone_area(void)
+{
+	struct right_circular_cone d;
+	printf("Enter the radius\n");
+	scanf("%f",&d.r);
+	printf("Enter the L\n");
+	scanf("%f",&d.l);
+	float area=pi*d.r*d.l;
+	printf("The curved surface area of right_circular_cone is %f\n",area);
+}
+void right_circular_cone_perimeter(void)
+{
+	struct right_circular_cone d;
+	printf("Enter the radius\n");
+	scanf("%f",&d.r);
+	printf("Enter the L\n");
+	scanf("%f",&d.l);
+	float area=pi*d.r*(d.l+d.r);
+	printf("The total surface area of right_circular_cone is %f\n",area);
+}
+void right_circular_cone_volume(void)
+{
+	struct right_circular_cone d;
+	printf("Enter the radius\n");
+	scanf("%f",&d.r);
+	printf("Enter the height\n");
+	scanf("%f",&d.h);
+	float area=1/3.0*pi*d.r*d.r*d.h;
+	printf("The volume of right_circular_cone is %f\n",area);
+}
+void frustum_of_cone_area(void)
+{
+	struct frustum f;
+	printf("Enter the vlaue of L\n");
+	scanf("%f",&f.l);
+	printf("Enter the vlaue of r1\n");
+	scanf("%f",&f.r1);
+	printf("Enter the vlaue of r2\n");
+	scanf("%f",&f.r2);
+	float area=pi*f.l*(f.r1+f.r2);
+	printf("The curved surface area of frustum_of_cone is %f\n",area);
+}
+void frustum_of_cone_perimeter(void)
+{
+	struct frustum f;
+	printf("Enter the vlaue of L\n");
+	scanf("%f",&f.l);
+	printf("Enter the vlaue of r1\n");
+	scanf("%f",&f.r1);
+	printf("Enter the vlaue of r2\n");
+	scanf("%f",&f.r2);
+	float area=pi*f.l*(f.r1+f.r2)+pi*f.r1*f.r1+pi*f.r2*f.r2;	
+	printf("The Total surface area of frustum_of_cone is %f\n",area);
+}
+void frustum_of_cone_volume(void)
+{
+	struct frustum f;
+	printf("Enter the vlaue of H\n");
+	scanf("%f",&f.h);
+	printf("Enter the vlaue of r1\n");
+	scanf("%f",&f.r1);
+	printf("Enter the vlaue of r2\n");
+	scanf("%f",&f.r2);
+	float area=1/3.0*pi*f.h*(f.r2*f.r2+f.r1*f.r1+f.r1*f.r2);
+	printf("The volume of frustum of a cone is %f\n",area);
+}
+int main()
+{
+printf("****WELCOME****\n");
+printf("#Operations#\n");
+printf("1.Rectangle\n");
+printf("2.Square\n");
+printf("3.Circle\n");
+printf("4.Triangle\n");
+printf("5.Trap\n");
+printf("6.Elli\n");
+printf("7.Annulus\n");
+printf("9.Rhombus\n");
+printf("10.Kite\n");
+printf("11.Cube\n");
+printf("12.Cuboid\n");
+printf("13.Sphere\n");
+printf("14.Right Circular Cylinder\n");
+printf("15.Right Circular Cone\n");
+printf("16.Frustum_of_a_cone\n\n");
+int n;
+printf("Choose the operatation you want to perform\n");
+scanf("%d",&n);
+switch(n)
+{
+	case 1:
+		rectangle_area();
+		printf("Do you want to Know the perimeter of the rectangle?for yes=1 and for no=0\n");
+		int D1;
+		scanf("%d",&D1);
+		if(D1==1)
+		rectangle_Perimeter();
+		else
+		break;
+		break;
+	case 2:
+		square_area();
+		printf("Do you want to Know the perimeter of the square?for yes=1 and for no=0\n");
+		int D2;
+		scanf("%d",&D2);
+		if(D2==1)
+		square_Perimeter();
+		else
+		break;
+		break;
+	case 3:
+		circle_area();
+		printf("Do you want to Know the circumference of the circle?for yes=1 and for no=0\n");
+		int D3;
+		scanf("%d",&D3);
+		if(D3==1)
+		circle_Perimeter();
+		else
+		break;
+		break;
+	case 4:
+		triangle_area();
+		printf("Do you want to Know the perimeter of the triangle?for yes=1 and for no=0\n");
+		int D4;
+		scanf("%d",&D4);
+		if(D4==1)
+		triangle_Perimeter();
+		else
+		break;
+		break;	
+	case 5:
+		trap_area();
+		printf("Do you want to Know the perimeter of the trap?for yes=1 and for no=0\n");
+		int D5;
+		scanf("%d",&D5);
+		if(D5==1)
+		trap_Perimeter();
+		else
+		break;
+		break;
+	case 6:
+		elli_area();
+		printf("Do you want to Know the perimeter of the elli?for yes=1 and for no=0\n");
+		int D6;
+		scanf("%d",&D6);
+		if(D6==1)
+		elli_Perimeter();
+		else
+		break;
+		break;
+	case 7:
+		annulus_area();
+		break;
+	case 9:
+		rhombus_area();
+		printf("Do you want to Know the perimeter of the rhombus?for yes=1 and for no=0\n");
+		int D9;
+		scanf("%d",&D9);
+		if(D9==1)
+		rhombus_Perimeter();
+		else
+		break;
+		break;
+	case 10:
+		kite_area();
+		printf("Do you want to Know the perimeter of the kite?for yes=1 and for no=0\n");
+		int D10;
+		scanf("%d",&D10);
+		if(D10==1)
+		kite_Perimeter();
+		else
+		break;
+		break;
+	case 11:
+		cube_area();
+		printf("Do you want to Know the total surface area of the cube?for yes=1 and for no=0\n");
+		int D11;
+		scanf("%d",&D11);
+		if(D11==1)
+		cube_Perimeter();
+		printf("Do you want to Know the volume of the cube?for yes=1 and for no=0\n");
+		int d12;
+		if(d12==1)
+		cube_volume();
+		else
+		break;
+		break;
+	case 12:
+		cuboid_area();
+		printf("Do you want to Know the total surface area of the cuboid?for yes=1 and for no=0\n");
+		int D13;
+		scanf("%d",&D13);
+		if(D13==1)
+		cube_Perimeter();
+		printf("Do you want to Know the volume of the cube?for yes=1 and for no=0\n");
+		int d14;
+		if(d14==1)
+		cube_volume();
+		else
+		break;
+		break;
+	case 13:
+		sphere_area();
+		printf("Do you want to Know the total surface area of sphere?for yes=1 and for no=0\n");
+		int D15;
+		scanf("%d",&D15);
+		if(D15==1)
+		sphere_perimeter();
+		printf("Do you want to Know the volume?for yes=1 and for no=0\n");
+		int d16;
+		if(d16==1)
+		sphere_volume();
+		else
+		break;
+		break;
+	case 14:
+		right_circular_cylinder_area();
+		printf("Do you want to Know the total surface area ?for yes=1 and for no=0\n");
+		int D17;
+		scanf("%d",&D17);
+		if(D17==1)
+		right_circular_cylinder_perimeter();
+		printf("Do you want to Know the volume of right_circular_cylinder?for yes=1 and for no=0\n");
+		int d18;
+		if(d18==1)
+		right_circular_cylinder_volume();
+		else
+		break;
+		break;
+	case 15:
+		right_circular_cone_area();
+		printf("Do you want to Know the total surface area ?for yes=1 and for no=0\n");
+		int D19;
+		scanf("%d",&D19);
+		if(D19==1)
+		right_circular_cone_perimeter();
+		printf("Do you want to Know the volume of right_circular_cone?for yes=1 and for no=0\n");
+		int d20;
+		if(d20==1)
+		right_circular_cone_volume();
+		else
+		break;
+		break;
+	case 16:
+		frustum_of_cone_area();
+		printf("Do you want to Know the total surface area ?for yes=1 and for no=0\n");
+		int D21;
+		scanf("%d",&D21);
+		if(D21==1)
+		frustum_of_cone_perimeter();
+		printf("Do you want to Know the volume ?for yes=1 and for no=0\n");
+		int d22;
+		scanf("%d",&d22);
+		if(d22==1)
+		frustum_of_cone_volume();
+		else
+		break;
+		break;
+}
+
+struct rectangle r1;
+struct square r2;
+struct circle r3;
+struct triangle r4;
+struct perimeter_of_circle r5;
+struct parell r6;
+struct trap r7;
+struct sector_of_circle r8;
+struct elli r9;
+struct annulus r10;
+struct polygon r11;
+struct rhombus r12;
+struct kite r13;
+struct cube r14;
+struct cuboid r15;
+struct sphere r16;
+struct solid_hemis r17;
+struct right_circular_cylinder r18;
+struct right_circular_cone r19;
+struct frustum r20;
+return 0;
+}
